@@ -16,5 +16,27 @@ namespace TemplateTPIntegrador
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            String usuario = txtUsuario.Text;
+            String password = txtPassword.Text;
+
+            try
+            {
+                LoginNegocio loginNegocio = new LoginNegocio(); ;
+                loginNegocio.Login(usuario, password);
+
+                Form form = new InitForm();
+                this.Hide();
+                form.ShowDialog();
+
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+        }
     }
 }
