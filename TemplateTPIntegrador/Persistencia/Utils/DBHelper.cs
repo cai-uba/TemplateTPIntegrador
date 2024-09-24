@@ -9,10 +9,10 @@ namespace Persistencia.Utils
 {
     public class DBHelper
     {
-        private static string filePath;
+        private string filePath;
 
         // Static constructor to set the default file path
-        static DBHelper()
+        public DBHelper()
         {
             string solutionDirectory = AppDomain.CurrentDomain.BaseDirectory;
             filePath = Path.Combine(solutionDirectory, "data.txt");
@@ -25,7 +25,7 @@ namespace Persistencia.Utils
         }
 
         // Method to insert a key-value pair
-        public static void Insertar(string key, string value)
+        public void Insertar(string key, string value)
         {
             using (StreamWriter writer = new StreamWriter(filePath, true))
             {
@@ -34,7 +34,7 @@ namespace Persistencia.Utils
         }
 
         // Method to modify the value of an existing key
-        public static void Modificar(string key, string newValue)
+        public void Modificar(string key, string newValue)
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
             bool modified = false;
@@ -58,7 +58,7 @@ namespace Persistencia.Utils
         }
 
         // Method to delete a key-value pair by key
-        public static void Borrar(string key)
+        public void Borrar(string key)
         {
             List<string> lines = File.ReadAllLines(filePath).ToList();
 
@@ -69,7 +69,7 @@ namespace Persistencia.Utils
         }
 
         // Method to search for a value by key
-        public static string Buscar(string key)
+        public string Buscar(string key)
         {
             string[] lines = File.ReadAllLines(filePath);
 
@@ -86,7 +86,7 @@ namespace Persistencia.Utils
         }
 
         // Method to list all key-value pairs
-        public static List<string> Listar()
+        public List<string> Listar()
         {
             return File.ReadAllLines(filePath).ToList();
         }
