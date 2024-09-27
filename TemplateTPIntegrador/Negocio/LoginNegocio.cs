@@ -1,4 +1,5 @@
 ﻿using Persistencia;
+using Persistencia.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,16 @@ namespace Negocio
 {
     public class LoginNegocio
     {
-        public void LoginNegocio(String usuario, String password) {
-            LoginWS loginWS = new LoginWS();   
+        public void login(String usuario, String password) {
 
+
+
+            LoginDB loginDB = new LoginDB();
+            loginDB.guardarIntento(usuario);
+
+
+            LoginWS loginWS = new LoginWS();   
+            loginWS.login(usuario, password); 
 
         
         }

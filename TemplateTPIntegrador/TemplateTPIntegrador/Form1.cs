@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +26,8 @@ namespace TemplateTPIntegrador
 
             try
             {
-                LoginNegocio loginNegocio = new LoginNegocio(); ;
-                loginNegocio.Login(usuario, password);
+                LoginNegocio loginNegocio = new LoginNegocio();
+                loginNegocio.login(usuario, password);
 
                 Form form = new InitForm();
                 this.Hide();
@@ -37,6 +38,11 @@ namespace TemplateTPIntegrador
             {
                 MessageBox.Show(exc.Message);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

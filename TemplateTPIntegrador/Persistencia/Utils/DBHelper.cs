@@ -12,10 +12,10 @@ namespace Persistencia.Utils
         private string filePath;
 
         // Static constructor to set the default file path
-        public DBHelper()
+        public DBHelper(String dataBaseName)
         {
             string solutionDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            filePath = Path.Combine(solutionDirectory, "data.txt");
+            filePath = Path.Combine(solutionDirectory, dataBaseName + ".txt");
 
             // Create the file if it doesn't exist
             if (!File.Exists(filePath))

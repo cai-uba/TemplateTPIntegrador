@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace TemplateTPIntegrador
 {
-    public partial class InitForm : Form
+    public partial class InitFormVendedor : Form
     {
-        public InitForm()
+        public InitFormVendedor()
         {
             InitializeComponent();
         }
 
+        private void InitFormVendedor_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
