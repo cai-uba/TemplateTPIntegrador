@@ -42,7 +42,7 @@ namespace Persistencia
             return idUsuario;
         }
 
-        private List<UsuarioWS> buscarDatosUsuario(String idUsuario)
+        public List<UsuarioWS> buscarDatosUsuario()
         {
             List<UsuarioWS> clientes = new List<UsuarioWS>();
 
